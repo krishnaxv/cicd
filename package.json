@@ -1,0 +1,42 @@
+{
+  "name": "cicd",
+  "version": "0.0.0",
+  "description": "Continuous Integration and Deployment",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
+    "husky": "^2.3.0",
+    "lerna": "^3.14.1",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
+    "typescript": "^3.4.5"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false
+  }
+}

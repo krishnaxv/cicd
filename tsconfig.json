@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "esnext",
+    "jsx": "preserve",
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "strict": true
+  },
+  "exclude": ["node_modules", "dist"]
+}
